@@ -1,11 +1,29 @@
-<!-- Why Work With Me -->
-<section class="container mx-auto px-6 py-12 max-w-3xl">
-    <h2 class="text-2xl font-bold mb-6">Why Work With Me?</h2>
-    <ul class="list-disc pl-6">
-        <li>Free First Call – I’ll help you assess whether I’m the right fit, no charge.</li>
-        <li>Full Control – You stay in control of the work, timeline, and budget—no surprises.</li>
-        <li>Adaptable to Your Needs – Whether you need quick fixes or full system design, I tailor the approach to your requirements.</li>
-        <li>Broker-Agnostic Expertise – I integrate with any trading platform, even if I haven’t worked with it before.</li>
-        <li>Proven Track Record – My clients range from hedge funds to independent traders.</li>
-    </ul>
+<!-- Why Work With Me Section -->
+<section class="container mx-auto px-6 py-12 sm:py-20 max-w-3xl">
+    <h2 class="text-4xl font-bold mb-12 sm:mb-20 text-center">Why Work With Me?</h2>
+
+    <div x-data="{ features: [
+        { icon: 'phone-call', title: 'Free First Call', text: 'I\'ll help you assess whether I’m the right fit, no charge.' },
+        { icon: 'handshake', title: 'Full Control', text: 'You stay in control of the work, timeline, and budget—no surprises.' },
+        { icon: 'sliders', title: 'Adaptable to Your Needs', text: 'From quick fixes to full system design, I adapt to your requirements.' },
+        { icon: 'unplug', title: 'Broker-Agnostic Expertise', text: 'I integrate with any trading platform, even if I haven\'t worked with it before.' },
+        { icon: 'chart-no-axes-combined', title: 'Proven Track Record', text: 'Trusted by hedge funds and independent traders for high-quality algorithmic solutions.' }
+    ] }" class="grid sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4 md:gap-6">
+
+        <template x-for="feature in features" :key="feature.title">
+            <div class="bg-gray-800 p-3 sm:p-6 rounded-lg shadow-md flex flex-row sm:flex-col items-center
+                        text-left sm:text-center gap-3 sm:gap-0 transition hover:scale-105">
+
+                <!-- Icon -->
+                <i :data-lucide="feature.icon" class="w-8 h-8 text-teal-400 sm:mb-3 min-w-6"></i>
+
+                <!-- Text -->
+                <div>
+                    <h3 class="text-lg font-semibold" x-text="feature.title"></h3>
+                    <p class="text-sm text-gray-300" x-text="feature.text"></p>
+                </div>
+            </div>
+        </template>
+
+    </div>
 </section>

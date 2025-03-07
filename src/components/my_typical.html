@@ -1,0 +1,28 @@
+<!-- The Way I Do It -->
+<section class="container mx-auto px-6 py-12 sm:py-20 max-w-3xl">
+    <h2 class="text-4xl font-bold mb-12 sm:mb-20 text-center">My Typical Approach</h2>
+
+    <div x-data="{ steps: [
+        { number: 1, title: 'Call', text: 'We jump on a call to figure out if I can be of help, free of charge.' },
+        { number: 2, title: 'Sign Contract', text: 'If you\'re satisfied, we sign a contract with an NDA to protect your information. I can handle the full system or just the backbone, leaving strategy code implementation to you.' },
+        { number: 3, title: 'Understanding Your Needs', text: 'You explain the requirements to me. Whether you\'re a beginner or an experienced trader, I\'ll adapt to your level of technical knowledge and help in areas where you need help.' },
+        { number: 4, title: 'System Design', text: 'I design the system and help you define the desired level of detail. Automated tests? Failure recovery? Fat finger checks? Trade logs? Dashboard? We can go complex, we can go simple.' },
+        { number: 5, title: 'Implementation', text: 'I take care of the whole process: architecture design, strategy implementation, deployment, and analysis, and can represent you in talks with the broker—you sit back and check in as often as you deem necessary.' },
+        { number: 6, title: 'Communication', text: 'As I work, I communicate each step and adjust the roadmap to match your vision and budget. You\'re always in control of the work I do, all time is tracked and you only pay for the hours I\'ve worked—we stop whenever you feel like stopping. Short projects are fine, long projects likewise.' }
+    ] }" class="space-y-8 max-w-2xl">
+        <template x-for="step in steps" :key="step.number">
+            <div class="flex items-start">
+                <!-- Number on the left -->
+<!--                <div class="text-teal-400 font-bold sm:text-5xl w-10 sm:w-24 flex justify-center flex-shrink-0 xmt-1" x-text="step.number"></div>-->
+                <div class="text-teal-400 font-bold text-5xl mr-4 sm:mx-10 flex justify-center flex-shrink-0 xmt-1" x-text="step.number"></div>
+
+                <!-- Title and Text stacked -->
+                <div class="w-full">
+                    <h3 class="font-semibold text-lg mb-1" x-text="step.title"></h3>
+                    <p class="text-gray-300" x-text="step.text"></p>
+                </div>
+            </div>
+        </template>
+
+    </div>
+</section>

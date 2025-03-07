@@ -13,63 +13,123 @@
     <style>
         body {
             font-family: 'Nunito', sans-serif;
+            /*font-family: 'Arial', sans-serif;*/
         }
+
         /*body { font-family: 'IBM+Plex+Sans', sans-serif; }*/
     </style>
 
     <!-- Alpine.js (Minimal JavaScript) -->
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
             defer></script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            background: linear-gradient(60deg, hsl(221 48% 7% / 1), hsl(218 34% 12% / 1));
+            background-attachment: fixed;
+            background-size: cover;
+
+        }
+        /*.body-overlay {*/
+        /*    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cdefs%3E%3Cpattern id='candle-pattern' width='120' height='120' patternUnits='userSpaceOnUse'%3E %3Crect x='20' y='40' width='10' height='40' fill='rgba(255,255,255,0.08)'/%3E %3Cline x1='25' y1='20' x2='25' y2='80' stroke='rgba(255,255,255,0.08)' stroke-width='3'/%3E %3Crect x='80' y='60' width='10' height='30' fill='rgba(255,255,255,0.08)'/%3E %3Cline x1='85' y1='50' x2='85' y2='100' stroke='rgba(255,255,255,0.08)' stroke-width='3'/%3E %3C/pattern%3E%3C/defs%3E %3Crect width='100%' height='100%' fill='url(%23candle-pattern)' /%3E %3C/svg%3E");*/
+
+        /*    background-attachment: fixed;*/
+        /*    background-size: 100px 100px; !* Adjust the spacing *!*/
+        /*    background-repeat: repeat;*/
+        /*}*/
+        /*.body-overlay {*/
+        /*    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cdefs%3E%3Cpattern id='x-pattern' width='240' height='240' patternUnits='userSpaceOnUse'%3E%3Ctext x='40' y='40' text-anchor='middle' dominant-baseline='middle' font-size='10' fill='rgba(255,255,255,0.06)'%3E▼%3C/text%3E%3Ctext x='160' y='160' text-anchor='middle' dominant-baseline='middle' font-size='10' fill='rgba(255,255,255,0.06)'%3E▲	%3C/text%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%' height='100%' fill='url(%23x-pattern)' /%3E%3C/svg%3E");*/
+        /*    background-attachment: fixed;*/
+        /*    background-size: 240px 240px; !* Adjust the spacing of the Xs *!*/
+        /*    background-repeat: repeat;*/
+        /*}*/
+    </style>
+
 </head>
-<body class="bg-gray-900 text-gray-100 min-h-[3300px]">
+<body class="text-gray-100 min-h-[3300px]">
+<div class="body-overlay">
 
-<!-- Hero Section -->
-<header class="py-16 bg-gray-800 text-center px-6">
-    <h1 class="text-4xl font-bold">Voy Zan - Algorithmic Trading Developer & Consultant</h1>
-    <p class="text-lg mt-4">I'm Voy, I build algorithmic trading systems. I can help you build yours.</p>
+    <!-- Hero Section -->
+    <header class="py-16 bg-gray-800 text-center px-6 shadow-md">
+        <h1 class="text-4xl font-bold">Voy Zan - Algorithmic Trading Developer & Consultant</h1>
+        <p class="text-lg mt-4">I'm Voy, I build algorithmic trading systems. I can help you build yours.</p>
 
-    <!-- Call to Action Button -->
-    <a href="mailto:hello@voyzan.com"
-       class="mt-6 inline-block bg-blue-500 px-6 py-3 rounded-lg text-white font-semibold hover:bg-blue-600">
-        hello@voyzan.com
-    </a>
+        <!-- Call to Action Button -->
+        <a href="mailto:hello@voyzan.com"
+           class="mt-6 inline-block bg-blue-500 px-6 py-3 rounded-lg text-white font-semibold hover:bg-blue-600 shadow-md">
+            hello@voyzan.com
+        </a>
 
-    <p class="text-lg mt-6 max-w-3xl mx-auto text-left">
-        I specialize in developing algorithmic trading systems, trading bots, and integrating financial APIs. I help companies and individuals realize and improve their vision, from carrying out small deployment and configuration tasks to full-scale trading system architecture, order management, strategy execution, and post-trade analytics. Over the years, I have worked with Interactive Brokers, Coinbase, FTX, Eze EMS, and BTIG, among others.
-    </p>
-</header>
+        <div class="text-lg mt-6 max-w-2xl mx-auto text-left">
+            <p>I help companies and individuals realise their vision, from small deployment and configuration tasks to full-scale trading system architecture, order management, strategy execution, and post-trade analytics.</p>
+            <br>
+            <p>Over the years, among others I have worked with:</p>
 
-<div id="loadable" class="opacity-0 transition-opacity duration-700 ease-in-out">
-    <div id="services"></div>
-    <div id="why_work"></div>
-    <div id="testimonials"></div>
-    <div id="the_way_i"></div>
+            <section class="container mx-auto px-2 py-6 max-w-4xl">
+
+                <div x-data="{ platforms: [
+        { name: 'Interactive Brokers', icon: 'briefcase' },
+        { name: 'Coinbase', icon: 'banknote' },
+        { name: 'FTX', icon: 'scale' },
+        { name: 'Eze EMS', icon: 'network' },
+        { name: 'BTIG', icon: 'building' }
+    ] }"
+                     class="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-4">
+
+                    <template x-for="platform in platforms"
+                              :key="platform.name">
+                        <div class="bg-gray-900 px-3 py-4  rounded-md shadow-md flex items-center text-center
+                        transition hover:scale-105">
 
 
-    <!-- Call to Action -->
-    <section class="container mx-auto px-6 py-12 max-w-3xl">
-        <h2 class="text-2xl font-bold mb-12 text-left">Contact</h2>
-        <h2 class="text-center mb-2">Email me to discuss your project – no commitment, just a chat:</h2>
-        <div class="text-center">
-            <a href="mailto:hello@voyzan.com"
-               class="mt-2 inline-block bg-blue-500 px-6 py-3 rounded-lg text-white font-semibold hover:bg-blue-600">
-                hello@voyzan.com
-            </a>
+                            <!-- Logo Placeholder (Replace with actual logos later) -->
+                            <i :data-lucide="platform.icon"
+                               class="inline-block size-6 mr-2 ml-auto text-teal-400 flex-shrink-0"></i>
+
+                            <!-- Platform Name -->
+                            <span class="inline-block mr-auto"
+                                  x-text="platform.name"></span>
+                        </div>
+                    </template>
+
+                </div>
+            </section>
         </div>
-    </section>
+    </header>
 
-    <div id="faq"></div>
+    <div id="loadable"
+         class="opacity-0 transition-opacity duration-700 ease-in-out">
+        <div id="services"></div>
+        <div id="why_work"></div>
+        <div id="testimonials"></div>
+        <div id="my_typical"></div>
 
-    <!-- Contact -->
-    <footer class="text-center py-8 bg-gray-800">
-        <p> Voy Zan <br><a href="mailto:hello@voyzan.com"
-                           class="text-blue-400">hello@voyzan.com</a></p>
-    </footer>
+
+        <!-- Call to Action -->
+        <section class="w-full bg-gray-800 shadow-md pb-16">
+            <div class="max-w-3xl  mx-auto px-6 py-12 sm:py-20 text-center">
+                <h2 class="text-4xl font-bold mb-12 sm:mb-20 text-center">Contact</h2>
+                <span> Get in touch: </span>
+                <div class="text-center">
+                    <a href="mailto:hello@voyzan.com"
+                       class="mt-4 inline-block bg-blue-500 px-6 py-3 rounded-lg text-white font-semibold hover:bg-blue-600 shadow-md">
+                        hello@voyzan.com
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div id="faq"></div>
+
+        <!-- Contact -->
+        <footer class="text-center py-8 mt-24 bg-gray-800">
+            <p> Voy Zan <br><a href="mailto:hello@voyzan.com"
+                               class="text-blue-400">hello@voyzan.com</a></p>
+        </footer>
+    </div>
+
+    <script src="scripts.js"></script>
 </div>
-
-
-
-<script src="scripts.js"></script>
-
 </body>
 </html>

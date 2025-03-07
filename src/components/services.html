@@ -1,26 +1,30 @@
 <!-- Services -->
-<section class="container mx-auto px-6 py-12">
-    <h2 class="text-2xl font-bold mb-6">Services</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="bg-gray-800 p-6 rounded-lg">
-            <h3 class="text-lg font-semibold">Strategy Development & Optimization</h3>
-            <p>I interpret, adapt, and improve client strategies without requiring them to have technical knowledge.</p>
-        </div>
-        <div class="bg-gray-800 p-6 rounded-lg">
-            <h3 class="text-lg font-semibold">Trading API Integration</h3>
-            <p>Bespoke connection to Interactive Brokers and other trading platforms, exposing 100% of the platform's capabilities.</p>
-        </div>
-        <div class="bg-gray-800 p-6 rounded-lg">
-            <h3 class="text-lg font-semibold">Custom Trading Systems</h3>
-            <p>Full development of algorithmic trading platforms, including backtesting, monitoring, and risk management.</p>
-        </div>
-        <div class="bg-gray-800 p-6 rounded-lg">
-            <h3 class="text-lg font-semibold">Consulting & Troubleshooting</h3>
-            <p>Guidance on architecture, API usage, and implementation challenges.</p>
-        </div>
-        <div class="bg-gray-800 p-6 rounded-lg">
-            <h3 class="text-lg font-semibold">Deployment & Automation</h3>
-            <p>Cloud-based deployment (Google Cloud, DigitalOcean, AWS) and automated trading infrastructure setup.</p>
-        </div>
+<section class="container mx-auto px-6 py-12 sm:py-20 max-w-3xl">
+    <h2 class="text-4xl font-bold mb-12 sm:mb-20 text-center">Services</h2>
+
+    <div x-data="{ services: [
+        { icon: 'binary', title: 'Strategy Development', text: 'I interpret, adapt, and improve client strategies without requiring them to have technical knowledge.' },
+        { icon: 'link', title: 'API Integration', text: 'Direct connection to Interactive Brokers and other trading platforms, exposing 100% of the platform\'s capabilities.' },
+        { icon: 'wand-sparkles', title: 'Bespoke Trading Systems', text: 'Full development of algorithmic trading systems, including backtesting, monitoring, and risk management.' },
+        { icon: 'help-circle', title: 'Consulting & Troubleshooting', text: 'Guidance on architecture, API usage, and implementation challenges.' },
+        { icon: 'cloud', title: 'Deployment', text: 'Cloud-based deployment (Google Cloud, DigitalOcean, AWS) and automated trading infrastructure setup.' }
+    ] }" class="max-w-2xl">
+
+        <template x-for="(service, index) in services" :key="service.title">
+            <div class="flex items-start gap-4 sm:gap-8" :class="index !== 0 ? 'mt-12' : ''">
+                <!-- Icon in Rounded Box with Glow -->
+                <div class="flex justify-center items-center size-12 sm:size-20 rounded-2xl
+                            bg-gray-800 shadow-lg transition hover:scale-105 flex-shrink-0">
+                    <i :data-lucide="service.icon" class="size-6 text-teal-400"></i>
+                </div>
+
+                <!-- Title and Text stacked -->
+                <div class="w-full">
+                    <h3 class="font-semibold text-lg mb-1" x-text="service.title"></h3>
+                    <p class="text-gray-300" x-text="service.text"></p>
+                </div>
+            </div>
+        </template>
+
     </div>
 </section>

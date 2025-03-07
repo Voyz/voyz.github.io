@@ -1,43 +1,94 @@
 <!-- FAQ -->
-<section class="container mx-auto px-6 py-12 max-w-3xl">
-    <h2 class="text-2xl font-bold mb-6 text-left">FAQ</h2>
+<section class="container mx-auto px-6 py-12 sm:py-20 max-w-3xl">
+    <h2 class="text-4xl font-bold mb-12 sm:mb-20 text-center">FAQ</h2>
+<!--    <div class="space-y-4 max-w-2xl mx-auto">-->
+<!--        <div class="faq-question bg-gray-800 p-4 rounded-lg cursor-pointer max-w-xl mr-auto">-->
+<!--            <h3 class="text-lg font-semibold">Do you do short projects? I only need a little help, this shouldn't take more than a day or two.</h3>-->
+<!--        </div>-->
+<!--        <div class="faq-answer hidden bg-gray-700 p-4 rounded-lg max-w-xl ml-auto">-->
+<!--            <p>That's fine, I'd be happy to help irrespectively of the scope of work.</p>-->
+<!--        </div>-->
+
+<!--        <div class="faq-question bg-gray-800 p-4 rounded-lg cursor-pointer max-w-xl mr-auto">-->
+<!--            <h3 class="text-lg font-semibold">Do you work with the XYZ platform/broker?</h3>-->
+<!--        </div>-->
+<!--        <div class="faq-answer hidden bg-gray-700 p-4 rounded-lg max-w-xl ml-auto">-->
+<!--            <p>The systems I build are broker-agnostic, meaning they can connect to any trading platform. If I haven’t worked with your specific broker before, I can adapt to it relatively quickly. Most APIs function similarly, so integrating a new one is usually straightforward.</p>-->
+<!--        </div>-->
+
+<!--        <div class="faq-question bg-gray-800 p-4 rounded-lg cursor-pointer max-w-xl mr-auto">-->
+<!--            <h3 class="text-lg font-semibold">What programming language do you build in?</h3>-->
+<!--        </div>-->
+<!--        <div class="faq-answer hidden bg-gray-700 p-4 rounded-lg max-w-xl ml-auto">-->
+<!--            <p>Python.</p>-->
+<!--        </div>-->
+
+<!--        <div class="faq-question bg-gray-800 p-4 rounded-lg cursor-pointer max-w-xl mr-auto">-->
+<!--            <h3 class="text-lg font-semibold">What's your background?</h3>-->
+<!--        </div>-->
+<!--        <div class="faq-answer hidden bg-gray-700 p-4 rounded-lg space-y-2 max-w-xl ml-auto">-->
+<!--            <p>I work in algorithmic trading since 2019. My specialisation is creating bespoke trading systems, focusing on reliability and maintainability. It brings me deep satisfaction to help my clients bring their ideas into fruition and their strategies to show full potential. Algorithmic trading, as a field, is full of eager and innovative people who are truly excited about what they do - and I feel I thrive in this setting.</p>-->
+<!--            <p>I authored and maintain two popular libraries for Interactive Brokers API: IBeam and IBind, and two not-so-popular but equally useful ones: Superloops and Databay.</p>-->
+<!--            <p>Prior to that I was a machine learning researcher, specialised in computer vision and rendering using deep neural networks. Throughout my career I did web development for a couple of years, and mobile development for a year. Before becoming fully remote I worked as workflow optimisation engineer and pipeline developer for some creative animation studios in London. My master's degree is in software engineering for computer graphics and visualisations, my undergraduate degree is in computer visual effects.</p>-->
+<!--            <p>When I don't code I travel the world, take nice photos and play music with my loved ones. I've recently settled down after 6 years of living across Asia, Latin America and Europe.</p>-->
+<!--        </div>-->
+
+<!--        <div class="faq-question bg-gray-800 p-4 rounded-lg cursor-pointer max-w-xl mr-auto">-->
+<!--            <h3 class="text-lg font-semibold">Do you trade yourself?</h3>-->
+<!--        </div>-->
+<!--        <div class="faq-answer hidden bg-gray-700 p-4 rounded-lg max-w-xl ml-auto">-->
+<!--            <p>Yes. I apply the same level of detail and robustness in my own trading systems as I do for clients.</p>-->
+<!--        </div>-->
+<!--    </div>-->
+
     <div class="space-y-4 max-w-2xl mx-auto">
-        <div class="faq-question bg-gray-800 p-4 rounded-lg cursor-pointer max-w-xl mr-auto">
-            <h3 class="text-lg font-semibold">Do you do short projects? I only need a little help, this shouldn't take more than a day or two.</h3>
-        </div>
-        <div class="faq-answer hidden bg-gray-700 p-4 rounded-lg max-w-xl ml-auto">
-            <p>That's fine, I'd be happy to help irrespectively of the scope of work.</p>
-        </div>
+        <template x-for="(faq, index) in [
+        {
+            question: 'Do you do short projects? I only need a little help, this shouldn\'t take more than a day or two.',
+            answer: 'Naturally, I\'d be happy to help irrespective of the scope of work.',
+            max_height: '200px'
+        },
+        {
+            question: 'Do you work with the XYZ platform/broker?',
+            answer: 'The systems I build are broker-agnostic, meaning they can connect to any trading platform. If I haven\'t worked with your broker before, I can adapt to it relatively quickly. Most APIs function similarly, so integrating a new one is usually straightforward.',
+            max_height: '300px'
+        },
+        {
+            question: 'What programming language do you build in?',
+            answer: 'Python.',
+            max_height: '80px'
+        },
+        {
+            question: 'What’s your background?',
+            answer: 'I have worked in algorithmic trading since 2019. I specialise in creating bespoke trading systems, focusing on reliability and maintainability. It brings me deep satisfaction to help my clients bring their ideas into fruition and to show the full potential of their strategies. Algorithmic trading, as a field, is full of eager and innovative people who are truly excited about what they do - and I feel I thrive in this setting.<br><br>I authored and maintain two popular libraries for Interactive Brokers API: IBeam and IBind, and two not-so-popular but equally useful libraries: Superloops and Databay.<br><br>Prior to my work in algorithmic trading I was a machine learning researcher, specialising in computer vision and rendering using deep neural networks. Throughout my career I have also done several years of web development, and mobile app development. Before becoming fully remote I worked as workflow optimisation engineer and pipeline developer for a couple of creative animation studios in London.<br><br>I have a masters degree in software engineering for computer graphics and visualisations, and an undergraduate degree in computer visual effects.<br><br>When I don\'t code I travel the world, take nice photos and play music with my loved ones. I\'ve recently settled down after 6 years of living across Asia, Latin America and Europe.',
+            max_height: '1500px'
+        },
+        {
+            question: 'Do you trade yourself?',
+            answer: 'Yes. I apply the same level of detail and robustness in my own trading systems as I do for clients.',
+            max_height: '200px'
+        }
+    ]" :key="index">
+            <div x-data="{ open: false }" class="max-w-2xl mx-auto">
+                <!-- Question (click to toggle) -->
+                <div @click="open = !open" class="faq-question bg-gray-800 p-4 rounded-lg cursor-pointer max-w-[620px] mr-auto shadow-md flex justify-between items-center">
+                    <h3 class="text-lg font-semibold" x-html="faq.question"></h3>
 
-        <div class="faq-question bg-gray-800 p-4 rounded-lg cursor-pointer max-w-xl mr-auto">
-            <h3 class="text-lg font-semibold">Do you work with the XYZ platform/broker?</h3>
-        </div>
-        <div class="faq-answer hidden bg-gray-700 p-4 rounded-lg max-w-xl ml-auto">
-            <p>The systems I build are broker-agnostic, meaning they can connect to any trading platform. If I haven’t worked with your specific broker before, I can adapt to it relatively quickly. Most APIs function similarly, so integrating a new one is usually straightforward.</p>
-        </div>
+                    <!-- Caret Icon with Rotation -->
+                    <i data-lucide="chevron-down" class="w-6 h-6 text-gray-400 transition-transform duration-300 ml-4 flex-shrink-0" :class="open ? 'rotate-180' : ''"></i>
+                </div>
 
-        <div class="faq-question bg-gray-800 p-4 rounded-lg cursor-pointer max-w-xl mr-auto">
-            <h3 class="text-lg font-semibold">What programming language do you build in?</h3>
-        </div>
-        <div class="faq-answer hidden bg-gray-700 p-4 rounded-lg max-w-xl ml-auto">
-            <p>Python.</p>
-        </div>
+                <!-- Answer (uses max-height & opacity transitions) -->
+                <div class="overflow-hidden transition-all duration-300 max-h-0 opacity-0"
+                     :class="open ? ' opacity-100' : 'opacity-0'"
+                     :style="open ? 'max-height: ' + faq.max_height : 'max-height: 0px;'">
 
-        <div class="faq-question bg-gray-800 p-4 rounded-lg cursor-pointer max-w-xl mr-auto">
-            <h3 class="text-lg font-semibold">What's your background?</h3>
-        </div>
-        <div class="faq-answer hidden bg-gray-700 p-4 rounded-lg space-y-2 max-w-xl ml-auto">
-            <p>I work in algorithmic trading since 2019. My specialisation is creating bespoke trading systems, focusing on reliability and maintainability. It brings me deep satisfaction to help my clients bring their ideas into fruition and their strategies to show full potential. Algorithmic trading, as a field, is full of eager and innovative people who are truly excited about what they do - and I feel I thrive in this setting.</p>
-            <p>I authored and maintain two popular libraries for Interactive Brokers API: IBeam and IBind, and two not-so-popular but equally useful ones: Superloops and Databay.</p>
-            <p>Prior to that I was a machine learning researcher, specialised in computer vision and rendering using deep neural networks. Throughout my career I did web development for a couple of years, and mobile development for a year. Before becoming fully remote I worked as workflow optimisation engineer and pipeline developer for some creative animation studios in London. My master's degree is in software engineering for computer graphics and visualisations, my undergraduate degree is in computer visual effects.</p>
-            <p>When I don't code I travel the world, take nice photos and play music with my loved ones. I've recently settled down after 6 years of living across Asia, Latin America and Europe.</p>
-        </div>
-
-        <div class="faq-question bg-gray-800 p-4 rounded-lg cursor-pointer max-w-xl mr-auto">
-            <h3 class="text-lg font-semibold">Do you trade yourself?</h3>
-        </div>
-        <div class="faq-answer hidden bg-gray-700 p-4 rounded-lg max-w-xl ml-auto">
-            <p>Yes. I apply the same level of detail and robustness in my own trading systems as I do for clients.</p>
-        </div>
+                    <div class="faq-answer bg-gray-700 p-4 rounded-lg max-w-[620px] ml-auto mb-6 mt-4 shadow-md">
+                        <p x-html="faq.answer"></p>
+                    </div>
+                </div>
+            </div>
+        </template>
     </div>
+
 </section>

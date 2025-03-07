@@ -19,7 +19,9 @@ function initializeFAQ() {
 			answer.classList.toggle('hidden');
 		});
 	});
+
 }
+
 
 async function loadAll() {
 	await Promise.all([
@@ -27,9 +29,11 @@ async function loadAll() {
 		loadComponent("services", "components/services.html"),
 		loadComponent("why_work", "components/why_work.html"),
 		loadComponent("testimonials", "components/testimonials.html"),
-		loadComponent("the_way_i", "components/the_way_i.html"),
+		loadComponent("my_typical", "components/my_typical.html"),
 		loadComponent("faq", "components/faq.html", initializeFAQ)
 	]);
+
+	lucide.createIcons(); // Initialize Lucide Icons
 
 	// Now remove the hidden class AFTER everything has loaded
 	const loadable = document.getElementById("loadable");
@@ -38,3 +42,5 @@ async function loadAll() {
 
 // Run the function
 loadAll();
+
+
