@@ -8,11 +8,12 @@
         { icon: 'sliders', title: 'Adaptable to Your Needs', text: 'From quick fixes to full system design, I adapt to your requirements.' },
         { icon: 'unplug', title: 'Broker-Agnostic Expertise', text: 'I integrate with any trading platform, even if I haven\'t worked with it before.' },
         { icon: 'chart-no-axes-combined', title: 'Proven Track Record', text: 'Trusted by hedge funds and independent traders for high-quality algorithmic solutions.' }
-    ] }" class="grid sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4 md:gap-6">
+    ] }"      class="flex flex-wrap justify-center gap-4 sm:gap-6">
 
         <template x-for="feature in features" :key="feature.title">
-            <div class="bg-gray-800 p-3 sm:p-6 rounded-lg shadow-md flex flex-row sm:flex-col items-center
-                        text-left sm:text-center gap-3 sm:gap-0 transition hover:scale-105">
+            <div class="xbg-gray-800 p-3 sm:p-6 xrounded-lg xshadow-md flex flex-row sm:flex-col items-center
+                    text-left sm:text-center gap-3 sm:gap-0 transition sm:hover:scale-105
+                    w-full  sm:size-[220px]"> <!-- Ensures grid-like structure -->
 
                 <!-- Icon -->
                 <i :data-lucide="feature.icon" class="w-8 h-8 text-teal-400 sm:mb-3 min-w-6"></i>

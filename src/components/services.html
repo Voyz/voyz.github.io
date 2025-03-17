@@ -1,30 +1,173 @@
 <!-- Services -->
-<section class="container mx-auto px-6 py-12 sm:py-20 max-w-3xl">
+<!--<section class="container mx-auto px-6 py-12 sm:py-20 max-w-3xl">-->
+<!--    <h2 class="text-4xl font-bold mb-12 sm:mb-20 text-center">Services</h2>-->
+
+<!--    <div x-data="{ services: [-->
+<!--        { icon: 'binary', title: 'Strategy Development', text: 'I interpret, adapt, and improve client strategies without requiring them to have technical knowledge.' },-->
+<!--        { icon: 'link', title: 'API Integration', text: 'Direct connection to Interactive Brokers and other trading platforms, exposing 100% of the platform\'s capabilities.' },-->
+<!--        { icon: 'wand-sparkles', title: 'Bespoke Trading Systems', text: 'Full development of algorithmic trading systems, including backtesting, monitoring, and risk management.' },-->
+<!--        { icon: 'help-circle', title: 'Consulting & Troubleshooting', text: 'Guidance on architecture, API usage, and implementation challenges.' },-->
+<!--        { icon: 'cloud', title: 'Deployment', text: 'Cloud-based deployment (Google Cloud, DigitalOcean, AWS) and automated trading infrastructure setup.' }-->
+<!--    ] }"-->
+<!--         class="max-w-2xl">-->
+
+<!--        <template x-for="(service, index) in services"-->
+<!--                  :key="service.title">-->
+<!--            <div class="flex items-start gap-4 sm:gap-8"-->
+<!--                 :class="index !== 0 ? 'mt-12' : ''">-->
+<!--                &lt;!&ndash; Icon in Rounded Box with Glow &ndash;&gt;-->
+<!--                <div class="flex justify-center items-center size-12 sm:size-20 rounded-2xl-->
+<!--                            bg-gray-800 shadow-lg transition hover:scale-105 flex-shrink-0">-->
+<!--                    <i :data-lucide="service.icon"-->
+<!--                       class="size-6 text-teal-400"></i>-->
+<!--                </div>-->
+
+<!--                &lt;!&ndash; Title and Text stacked &ndash;&gt;-->
+<!--                <div class="w-full">-->
+<!--                    <h3 class="font-semibold text-lg mb-1"-->
+<!--                        x-text="service.title"></h3>-->
+<!--                    <p class="text-gray-300"-->
+<!--                       x-text="service.text"></p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </template>-->
+
+<!--    </div>-->
+<!--</section>-->
+
+<section class="container mx-auto px-0 sm:px-6 py-12 sm:py-20 max-w-3xl">
     <h2 class="text-4xl font-bold mb-12 sm:mb-20 text-center">Services</h2>
-
     <div x-data="{ services: [
-        { icon: 'binary', title: 'Strategy Development', text: 'I interpret, adapt, and improve client strategies without requiring them to have technical knowledge.' },
-        { icon: 'link', title: 'API Integration', text: 'Direct connection to Interactive Brokers and other trading platforms, exposing 100% of the platform\'s capabilities.' },
-        { icon: 'wand-sparkles', title: 'Bespoke Trading Systems', text: 'Full development of algorithmic trading systems, including backtesting, monitoring, and risk management.' },
-        { icon: 'help-circle', title: 'Consulting & Troubleshooting', text: 'Guidance on architecture, API usage, and implementation challenges.' },
-        { icon: 'cloud', title: 'Deployment', text: 'Cloud-based deployment (Google Cloud, DigitalOcean, AWS) and automated trading infrastructure setup.' }
-    ] }" class="max-w-2xl">
+        {
+            icon: 'binary',
+            title: 'Strategy Development',
+            text: 'I interpret, adapt, and improve client strategies without requiring them to have technical knowledge.',
+            image_large: 'assets/services/strategy2.png',
+            ximage_large: 'assets/strategy.jpg',
+            bulletpoints: [
+                'I can help you automate your trading strategy.',
+                'Whether it is well defined, or just work in progress - I’ll help you translate it from theory to a fully-automated system.',
+                'I can help you analyse and optimise it, implementing attribution analysis, performance metrics and parameter optimisation.',
+                'The strategy implementation has 100% automated test coverage, ensuring it follows your specifications.'
+            ],
+            details: 'The strategy implementation varies from client to client, each time I provide a solution suited to their needs. I\'ve worked with various trading frequencies - from seconds to hours -, single and multi asset strategies and implemented dynamic parameter adjustment in response to market conditions. For each client I propose a bespoke method of controlling the strategy behaviour, be it a mobile app, a Google Sheet or a cloud-hosted parameters file. While implementing automated test coverage I verify the strategy\'s underlying theory, helping to identify areas for improvement.'
+        },
+        {
+            icon: 'link',
+            title: 'API Integration',
+            text: 'Direct connection to Interactive Brokers and other trading platforms, exposing 100% of the platform\'s capabilities.',
+            image_large: 'assets/services/apis3.png',
+            ximage_large: 'assets/ibkr_adapter.png',
+            bulletpoints: [
+                'Communicating directly with the APIs your strategy gains access to solutions that wouldn\'t otherwise be available.',
+                'Need to access data from various vendors? Anything that the strategy may require can be made available.',
+                'Worried about stop losses not executing? The system will act accordingly if the broker fails to close a position.',
+                'What if you want to change the broker? A custom API connection makes your system independent, allowing you to easily swap the trading platform.'
+            ],
+            details: 'I integrate the APIs with a broker-agnostic approach, never coupling with one particular vendor. I\'ve transitioned several of my clients from one broker to another with only needing to adjust a small portion of the system responsible for translating to and from the API. A custom system that runs independently from the trading platforms removes their limitations and greatly amplifies the range of actions a strategy could take.'
+        },
+        {
+            icon: 'wand-sparkles',
+            title: 'Bespoke Trading Systems',
+            text: 'Full development of algorithmic trading systems, including backtesting, monitoring, and risk management.',
+            image_large: 'assets/services/system3.png',
+            ximage_large: 'assets/execution_flow.png',
+            bulletpoints: [
+                'Real money is at stake - I put emphasis on reliability and security in the implementation.',
+                'I build modular systems, ensuring that one failure doesn\'t halt everything else. Recovery mechanisms help identify and restart faulty modules.',
+                'Several layers of error handling help reduce risk of critical failure, ensuring uninterrupted trading capabilities.',
+                'Verification logic prevents erroneous actions either due to human or technological error.',
+            ],
+            details: 'I\'ve designed and implemented complete algo trading systems for various clients, including hedge funds, startups and individual investors. Features included: backtesting, parameter handling, order execution, risk management, monitoring, logging, and post-trade reconciliation. The implementation ensured efficient order execution, minimal downtime and an easily extensible design.'
+        },
+        {
+            icon: 'help-circle',
+            title: 'Consulting & Troubleshooting',
+            text: 'Guidance on architecture, API usage, and implementation challenges.',
+            image_large: 'assets/services/consulting4.png',
+            ximage_large: 'assets/execution_flow.png',
+            bulletpoints: [
+                'I can help you troubleshoot your existing system and suggest improvements.',
+                'Talk to me if you have questions that you don’t know who to ask.',
+                'I can provide guidance and oversee the implementation of your system.',
+            ],
+            details: 'Algorithmic trading is a domain without a strong open-source community, frequently leaving many questions unanswered. I help my clients ask the right questions and look for the answers. Whether it is related to brokers, the strategies, implementation or trading in general, I provide consultation services to aid traders in expanding their knowledge and identifying the road ahead.'
+        },
+        {
+            icon: 'cloud',
+            title: 'Deployment',
+            text: 'Cloud-based deployment (Google Cloud, DigitalOcean, AWS) and automated trading infrastructure setup.',
+            image_large: 'assets/services/cloud4.png',
+            ximage_large: 'assets/execution_flow.png',
+            bulletpoints: [
+                'Using the cloud takes your system to the next level in terms of reliability, security and monitoring.',
+                'I can help you use Docker and deploy your system on cloud.',
+                'If your broker requires additional software to trade, I can help you automate it and make the connection secure.',
+                'I adapt the systems to leverage the cloud infrastructure, including monitoring, logging, alerts, scheduling and cost-optimisation.',
+            ],
+            details: 'The deployment varies from client to client, depending on the broker and their requirements. I’ve helped set up the necessary infrastructure to authenticate and enable the trading. The systems I build are deployed on the cloud adhering to modern security standards.'
+        }
+    ] }"
+         class="space-y-6 max-w-3xl mx-auto">
+        <template x-for="(service, index) in services"
+                  :key="service.title">
+            <div x-data="{ open: false }"
+                 class="max-w-3xl mx-auto">
+                <!-- Question (click to toggle) -->
+                <div @click="open = !open"
+                     class="xbg-gray-800 p-4 sm:xrounded-lg cursor-pointer sm:xshadow-md transition-all duration-300"
+                     :class="{ 'mb-16': open }"
+                >
+                    <div class="xborder-l xborder-grey-800 ">
+                        <div class="ml-0 sm:ml-6 sm:my-4 sm:mr-4 flex justify-between items-center">
+        <!--                    <img :src="service.image_small" class="h-20">-->
+        <!--                    <div class="flex justify-center items-center size-12 sm:size-20 rounded-2xl-->
+        <!--                            bg-gray-700 shadow-lg transition hover:scale-105 flex-shrink-0">-->
+        <!--                        <i :data-lucide="service.icon"-->
+        <!--                           class="size-6 text-teal-400"></i>-->
+        <!--                    </div>-->
+                            <div class="flex-grow-1 w-full">
+                                <div class="flex items-center mb-2 ">
+                                    <i :data-lucide="service.icon"
+                                       class="size-5 text-teal-400 mr-2"></i>
 
-        <template x-for="(service, index) in services" :key="service.title">
-            <div class="flex items-start gap-4 sm:gap-8" :class="index !== 0 ? 'mt-12' : ''">
-                <!-- Icon in Rounded Box with Glow -->
-                <div class="flex justify-center items-center size-12 sm:size-20 rounded-2xl
-                            bg-gray-800 shadow-lg transition hover:scale-105 flex-shrink-0">
-                    <i :data-lucide="service.icon" class="size-6 text-teal-400"></i>
+                                    <h3 class="font-semibold text-lg"
+                                        x-text="service.title"></h3>
+                                </div>
+                                <p class="text-gray-300"
+                                   x-text="service.text"></p>
+                            </div>
+
+                            <!-- Caret Icon with Rotation -->
+                            <i data-lucide="chevron-down"
+                               class="w-6 h-6 text-gray-400 transition-transform duration-300 ml-4 flex-shrink-0"
+                               :class="{ 'rotate-180': open }"></i>
+                        </div>
+
+                        <!-- Answer Container -->
+                        <div x-ref="answer"
+                             x-bind:style="open ? 'max-height: ' + $refs.answer.scrollHeight + 'px; opacity: 1;' : 'max-height: 0px; opacity: 0;'"
+                             class="overflow-hidden transition-all duration-300 ease-in-out opacity-0"
+                        >
+
+                            <div class="px-0 sm:px-12 mb-8">
+                                <img :src="service.image_large" class="mx-auto max-h-[240px]  px-0 sm:px-4 mt-8 mb-4">
+                                <ul class="list-disc mt-8 mb-2 space-y-4 pl-4">
+                                    <template x-for="(bulletpoint) in service.bulletpoints"
+                                              :key="bulletpoint">
+                                        <li x-text="bulletpoint"></li>
+                                    </template>
+                                </ul>
+
+                                <p x-html="service.details" class="mt-6"></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Title and Text stacked -->
-                <div class="w-full">
-                    <h3 class="font-semibold text-lg mb-1" x-text="service.title"></h3>
-                    <p class="text-gray-300" x-text="service.text"></p>
-                </div>
+
             </div>
         </template>
-
     </div>
+
 </section>

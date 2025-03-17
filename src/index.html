@@ -23,7 +23,8 @@
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
             defer></script>
 
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <!--    <script src="https://unpkg.com/lucide@latest"></script>-->
+    <script src="assets/lucide/lucide.js"></script>
     <style>
         body {
             background: linear-gradient(60deg, hsl(221 48% 7% / 1), hsl(218 34% 12% / 1));
@@ -31,6 +32,58 @@
             background-size: cover;
 
         }
+
+        /*.hero_bg {*/
+        /*    background-image: url('assets/heroA03.png');*/
+        /*    background-size: contain;*/
+        /*    background-repeat: no-repeat;*/
+        /*    background-position: left bottom;*/
+        /*    pointer-events: none;*/
+        /*    translate: -1.5em 20px;*/
+        /*    height: calc(350px + 40vw);*/
+        /*    width: calc(95vw);*/
+        /*    max-height: 690px;*/
+        /*    max-width: 1100px;*/
+        /*}*/
+        /*header {*/
+        /*    height: calc(520px + 40vw);*/
+        /*    max-height: 850px;*/
+        /*    overflow: hidden;*/
+        /*}*/
+        /*@media (min-width: 640px) {*/
+        /*    .hero_bg {*/
+        /*        translate: -1.5em 0px;*/
+
+        /*    }*/
+        /*}*/
+
+        .hero_bg {
+            /*background-image: url('assets/heroA03.png');*/
+            /*background-size: contain;*/
+            /*background-repeat: no-repeat;*/
+            /*background-position: left bottom;*/
+            pointer-events: none;
+            translate: -1.5em 20px;
+            height: calc(350px + 40vw);
+            width: calc(95vw);
+            max-height: 690px;
+            max-width: 1100px;
+            img {
+                object-fit: contain;
+            }
+        }
+        header {
+            /*height: calc(520px + 40vw);*/
+            /*max-height: 850px;*/
+            /*overflow: hidden;*/
+        }
+        @media (min-width: 640px) {
+            .hero_bg {
+                translate: -1.5em 0px;
+
+            }
+        }
+
         /*.body-overlay {*/
         /*    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cdefs%3E%3Cpattern id='candle-pattern' width='120' height='120' patternUnits='userSpaceOnUse'%3E %3Crect x='20' y='40' width='10' height='40' fill='rgba(255,255,255,0.08)'/%3E %3Cline x1='25' y1='20' x2='25' y2='80' stroke='rgba(255,255,255,0.08)' stroke-width='3'/%3E %3Crect x='80' y='60' width='10' height='30' fill='rgba(255,255,255,0.08)'/%3E %3Cline x1='85' y1='50' x2='85' y2='100' stroke='rgba(255,255,255,0.08)' stroke-width='3'/%3E %3C/pattern%3E%3C/defs%3E %3Crect width='100%' height='100%' fill='url(%23candle-pattern)' /%3E %3C/svg%3E");*/
 
@@ -50,58 +103,116 @@
 <body class="text-gray-100 min-h-[3300px]">
 <div class="body-overlay">
 
-    <!-- Hero Section -->
-    <header class="py-16 bg-gray-800 text-center px-6 shadow-md">
-        <h1 class="text-4xl font-bold">Voy Zan - Algorithmic Trading Developer & Consultant</h1>
-        <p class="text-lg mt-4">I'm Voy, I build algorithmic trading systems. I can help you build yours.</p>
+    <header class="py-12 sm:py-16 2xl:py-40 xbg-gray-800 px-8 sm:px-16 xshadow-md relative">
+        <div class="mx-auto max-w-5xl text-left relative pt-10">
+            <div class="header_text absolute inset-0 z-20">
+                <h1 class="text-5xl font-bold">Voy Zan</h1>
+                <h2 class="text-2xl font-bold mt-6"> Algorithmic Trading Developer & Consultant </h2>
+                <div class="my-10">
+                    <p class="text-lg">I'm Voy <br> I build algorithmic trading systems <br> I can help you build yours</p>
 
-        <!-- Call to Action Button -->
-        <a href="mailto:hello@voyzan.com"
-           class="mt-6 inline-block bg-blue-500 px-6 py-3 rounded-lg text-white font-semibold hover:bg-blue-600 shadow-md">
-            hello@voyzan.com
-        </a>
-
-        <div class="text-lg mt-6 max-w-2xl mx-auto text-left">
-            <p>I help companies and individuals realise their vision, from small deployment and configuration tasks to full-scale trading system architecture, order management, strategy execution, and post-trade analytics.</p>
-            <br>
-            <p>Over the years, among others I have worked with:</p>
-
-            <section class="container mx-auto px-2 py-6 max-w-4xl">
-
-                <div x-data="{ platforms: [
-        { name: 'Interactive Brokers', icon: 'briefcase' },
-        { name: 'Coinbase', icon: 'banknote' },
-        { name: 'FTX', icon: 'scale' },
-        { name: 'Eze EMS', icon: 'network' },
-        { name: 'BTIG', icon: 'building' }
-    ] }"
-                     class="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-4">
-
-                    <template x-for="platform in platforms"
-                              :key="platform.name">
-                        <div class="bg-gray-900 px-3 py-4  rounded-md shadow-md flex items-center text-center
-                        transition hover:scale-105">
-
-
-                            <!-- Logo Placeholder (Replace with actual logos later) -->
-                            <i :data-lucide="platform.icon"
-                               class="inline-block size-6 mr-2 ml-auto text-teal-400 flex-shrink-0"></i>
-
-                            <!-- Platform Name -->
-                            <span class="inline-block mr-auto"
-                                  x-text="platform.name"></span>
-                        </div>
-                    </template>
-
+                    <!-- Call to Action Button -->
+                    <a href="mailto:hello@voyzan.com"
+                       class="mt-6 inline-block bg-blue-500 px-6 py-3 rounded-lg text-white font-semibold hover:bg-blue-600 shadow-md">
+                        hello@voyzan.com
+                    </a>
                 </div>
-            </section>
+            </div>
+            <div class="hero_bg flex items-end">
+                <img src="assets/heroA04.png" class="z-0 " aria-hidden="true"></img>
+            </div>
+
+
+<!--    &lt;!&ndash; Hero Section &ndash;&gt;-->
+<!--    <header class="py-16 bg-gray-800 px-8 sm:px-16 shadow-md relative">-->
+<!--        <div class="mx-auto max-w-5xl text-left relative z-10">-->
+<!--            <h1 class="text-5xl font-bold mt-10">Voy Zan</h1>-->
+<!--            <h2 class="text-2xl font-bold mt-6"> Algorithmic Trading Developer & Consultant </h2>-->
+<!--            <div class="my-10">-->
+<!--                <p class="text-lg">I'm Voy <br> I build algorithmic trading systems <br> I can help you build yours</p>-->
+
+<!--                &lt;!&ndash; Call to Action Button &ndash;&gt;-->
+<!--                <a href="mailto:hello@voyzan.com"-->
+<!--                   class="mt-6 inline-block bg-blue-500 px-6 py-3 rounded-lg text-white font-semibold hover:bg-blue-600 shadow-md">-->
+<!--                    hello@voyzan.com-->
+<!--                </a>-->
+<!--            </div>-->
+<!--            <div class="hero_bg absolute inset-0 z-20" aria-hidden="true"></div>-->
+
+            <!--        <div class="mt-6 max-w-2xl mx-auto text-left text-gray-300">-->
+            <!--            <p class="font-semibold mb-2">I work with:</p>-->
+            <!--            <div class="gap-4">-->
+            <!--                <div class="flex items-center gap-1">-->
+            <!--                    <i data-lucide="check" class="size-5 text-teal-400"></i>-->
+            <!--                    <p>Individuals</p>-->
+            <!--                </div>-->
+            <!--                <div class="flex items-center gap-1">-->
+            <!--                    <i data-lucide="check" class="size-5 text-teal-400"></i>-->
+            <!--                    <p>Startups</p>-->
+            <!--                </div>-->
+            <!--                <div class="flex items-center gap-1">-->
+            <!--                    <i data-lucide="check" class="size-5 text-teal-400"></i>-->
+            <!--                    <p>Hedge funds</p>-->
+            <!--                </div>-->
+            <!--            </div>-->
+
+            <!--            <p class="font-semibold mt-6 mb-2">I do:</p>-->
+            <!--            <div class="gap-4">-->
+            <!--                <div class="flex items-center gap-1">-->
+            <!--                    <i data-lucide="check" class="size-5 text-teal-400"></i>-->
+            <!--                    <p>Deployment and configuration.</p>-->
+            <!--                </div>-->
+            <!--                <div class="flex items-center gap-1">-->
+            <!--                    <i data-lucide="check" class="size-5 text-teal-400"></i>-->
+            <!--                    <p>Full-scale trading system architecture, order management and strategy execution.</p>-->
+            <!--                </div>-->
+            <!--                <div class="flex items-center gap-1">-->
+            <!--                    <i data-lucide="check" class="size-5 text-teal-400"></i>-->
+            <!--                    <p>Backtesting and post-trade analytics.</p>-->
+            <!--                </div>-->
+            <!--            </div>-->
+            <!--        </div>-->
+
+
+<!--            <div class="mt-6 max-w-2xl ml-auto text-left">-->
+<!--                <p>Brokers and platforms I've used:</p>-->
+
+<!--                <section class="container mx-auto px-2 py-6 max-w-4xl">-->
+
+<!--                    <div x-data="{ platforms: [-->
+<!--        { name: 'Interactive Brokers', icon: 'briefcase', src: 'assets/ibkr_logotype2.png', h: '20'},-->
+<!--        { name: 'BTIG', icon: 'building', src: 'assets/btig_logotype2.png', h: '20' },-->
+<!--        { name: 'Coinbase', icon: 'banknote', src: 'assets/coinbase_logotype2.png', h: '16' },-->
+<!--        { name: 'Eze EMS', icon: 'network', src: 'assets/eze_ems_logotype2.png', h: '40' },-->
+<!--        { name: 'FTX', icon: 'scale', src: 'assets/ftx_logotype2.png', h: '30' },-->
+<!--    ] }"-->
+<!--                         class="flex flex-wrap justify-center gap-2 sm:gap-2">-->
+
+<!--                        <template x-for="platform in platforms"-->
+<!--                                  :key="platform.name">-->
+<!--                            <div class="bg-gray-900 px-4 py-2 rounded-md shadow-md flex items-center justify-center-->
+<!--                        w-[180px] h-[60px] sm:h-[50px] transition sm:hover:scale-105">-->
+
+<!--                                &lt;!&ndash; Image &ndash;&gt;-->
+<!--                                <img :src="platform.src"-->
+<!--                                     :alt="platform.name"-->
+<!--                                     class="max-h-full max-w-full object-contain"-->
+<!--                                     :class="'h-[' + platform.h + 'px]'">-->
+<!--                            </div>-->
+<!--                        </template>-->
+
+<!--                    </div>-->
+<!--                </section>-->
+
+
+<!--            </div>-->
         </div>
+
     </header>
 
     <div id="loadable"
-         class="opacity-0 transition-opacity duration-700 ease-in-out">
+         class="opacity-0 ">
         <div id="services"></div>
-        <div id="why_work"></div>
         <div id="testimonials"></div>
         <div id="my_typical"></div>
 
@@ -119,7 +230,7 @@
                 </div>
             </div>
         </section>
-
+        <div id="why_work"></div>
         <div id="faq"></div>
 
         <!-- Contact -->
