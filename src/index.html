@@ -7,15 +7,86 @@
     <title>Voy Zan - Algorithmic Trading Developer & Consultant</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap"
           rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&display=swap"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
-            font-family: 'Nunito', sans-serif;
+            /*font-family: 'Nunito', sans-serif;*/
             /*font-family: 'Arial', sans-serif;*/
+            /*font-family: 'Times New Roman', serif;*/
+            /*font-family: 'Public Sans', sans-serif;*/
+            font-family: 'Inter', sans-serif;
+        }
+        :root {
+            --color-primary-bg: #191919;
+            --color-secondary-bg: #242424;
+            --color-bright-bg: #333;
+            --color-primary-border: #333;
+            --color-accent: #ffffff;
+            /*--color-button: #598fc2;*/
+            --color-button: #ffffff;
+            --color-text-primary: #cccccc;
+            --color-text-secondary: #bbbbbb;
+        }
+        .heading-text{
+            font-family: 'Roboto Condensed', serif;
+        }
+        .bg-primary {
+            background-color: var(--color-primary-bg);
+        }
+        .bg-secondary {
+            background-color: var(--color-secondary-bg);
+        }
+        .bg-bright {
+            background-color: var(--color-bright-bg);
+        }
+        .bg-accent {
+            background-color: var(--color-accent);
+        }
+        .bg-button {
+            background-color: var(--color-button);
+        }
+        .primary-button {
+            background-color: var(--color-button);
+            color: #444;
+            /*border-color: var(--color-button);*/
+            /*border-width: 1px;*/
+        }
+        .primary-button:hover {
+            background-color: rgba(255,255,255,0.8);
         }
 
+        .secondary-button {
+            outline-color: var(--color-primary-border);
+        }
+        .secondary-button:hover {
+            background-color: rgba(255,255,255,0.03);
+        }
+
+        .text-primary {
+            color: var(--color-text-primary);
+        }
+        .text-secondary {
+            color: var(--color-text-secondary);
+        }
+
+        .text-accent {
+            color: var(--color-accent);
+        }
+        .border-primary{
+            border-color: var(--color-primary-border);
+            outline-color: var(--color-primary-border);
+        }
+        .gradient-text {
+            background: linear-gradient(97.0286deg, rgba(255,255,255,0.95), rgba(255,255,255,0.4));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
         /*body { font-family: 'IBM+Plex+Sans', sans-serif; }*/
     </style>
 
@@ -26,12 +97,12 @@
     <!--    <script src="https://unpkg.com/lucide@latest"></script>-->
     <script src="assets/lucide/lucide.js"></script>
     <style>
-        body {
-            background: linear-gradient(60deg, hsl(221 48% 7% / 1), hsl(218 34% 12% / 1));
-            background-attachment: fixed;
-            background-size: cover;
+        /*body {*/
+        /*    background: linear-gradient(60deg, hsl(221 48% 7% / 1), hsl(218 34% 12% / 1));*/
+        /*    background-attachment: fixed;*/
+        /*    background-size: cover;*/
 
-        }
+        /*}*/
 
         /*.hero_bg {*/
         /*    background-image: url('assets/heroA03.png');*/
@@ -68,6 +139,7 @@
             width: calc(95vw);
             max-height: 690px;
             max-width: 1100px;
+            opacity: 0.85;
             img {
                 object-fit: contain;
             }
@@ -84,42 +156,34 @@
             }
         }
 
-        /*.body-overlay {*/
-        /*    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cdefs%3E%3Cpattern id='candle-pattern' width='120' height='120' patternUnits='userSpaceOnUse'%3E %3Crect x='20' y='40' width='10' height='40' fill='rgba(255,255,255,0.08)'/%3E %3Cline x1='25' y1='20' x2='25' y2='80' stroke='rgba(255,255,255,0.08)' stroke-width='3'/%3E %3Crect x='80' y='60' width='10' height='30' fill='rgba(255,255,255,0.08)'/%3E %3Cline x1='85' y1='50' x2='85' y2='100' stroke='rgba(255,255,255,0.08)' stroke-width='3'/%3E %3C/pattern%3E%3C/defs%3E %3Crect width='100%' height='100%' fill='url(%23candle-pattern)' /%3E %3C/svg%3E");*/
-
-        /*    background-attachment: fixed;*/
-        /*    background-size: 100px 100px; !* Adjust the spacing *!*/
-        /*    background-repeat: repeat;*/
-        /*}*/
-        /*.body-overlay {*/
-        /*    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cdefs%3E%3Cpattern id='x-pattern' width='240' height='240' patternUnits='userSpaceOnUse'%3E%3Ctext x='40' y='40' text-anchor='middle' dominant-baseline='middle' font-size='10' fill='rgba(255,255,255,0.06)'%3E▼%3C/text%3E%3Ctext x='160' y='160' text-anchor='middle' dominant-baseline='middle' font-size='10' fill='rgba(255,255,255,0.06)'%3E▲	%3C/text%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%' height='100%' fill='url(%23x-pattern)' /%3E%3C/svg%3E");*/
-        /*    background-attachment: fixed;*/
-        /*    background-size: 240px 240px; !* Adjust the spacing of the Xs *!*/
-        /*    background-repeat: repeat;*/
         /*}*/
     </style>
 
 </head>
-<body class="text-gray-100 min-h-[3300px]">
-<div class="body-overlay">
+<body class="min-h-[3300px] text-primary">
+<div class="body-overlay bg-primary">
 
     <header class="py-12 sm:py-16 2xl:py-40 xbg-gray-800 px-8 sm:px-16 xshadow-md relative">
         <div class="mx-auto max-w-5xl text-left relative pt-10">
-            <div class="header_text absolute inset-0 z-20">
-                <h1 class="text-5xl font-bold">Voy Zan</h1>
-                <h2 class="text-2xl font-bold mt-6"> Algorithmic Trading Developer & Consultant </h2>
-                <div class="my-10">
-                    <p class="text-lg">I'm Voy <br> I build algorithmic trading systems <br> I can help you build yours</p>
+            <div class="flex flex-col header_text absolute inset-0 z-20">
+                <div class="mr-auto">
+                    <h1 class="text-6xl font-bold gradient-text leading-[4.5rem] heading-text">Voy Zan</h1>
+                    <h2 class="text-2xl font-medium mt-4 gradient-text heading-text"> Algorithmic Trading Developer & Consultant </h2>
+                    <div class="my-10">
+                        <p class="text-xl gradient-text font-medium heading-text">I'm Voy <br> I build algorithmic trading systems <br> I can help you build yours</p>
 
-                    <!-- Call to Action Button -->
-                    <a href="mailto:hello@voyzan.com"
-                       class="mt-6 inline-block bg-blue-500 px-6 py-3 rounded-lg text-white font-semibold hover:bg-blue-600 shadow-md">
-                        hello@voyzan.com
-                    </a>
+                        <!-- Call to Action Button -->
+                        <a href="mailto:hello@voyzan.com"
+                           class="mt-10 inline-block primary-button px-6 py-4 rounded-lg shadow-md transition">
+                            <i data-lucide="message-square" class="size-4 mr-0 mb-1 inline-flex"></i>
+                            hello@voyzan.com
+                        </a>
+
+                    </div>
                 </div>
             </div>
             <div class="hero_bg flex items-end">
-                <img src="assets/heroA04.png" class="z-0 " aria-hidden="true"></img>
+                <img src="assets/heroA03.png" class="z-0 " aria-hidden="true"></img>
             </div>
 
 
@@ -174,38 +238,7 @@
             <!--        </div>-->
 
 
-<!--            <div class="mt-6 max-w-2xl ml-auto text-left">-->
-<!--                <p>Brokers and platforms I've used:</p>-->
 
-<!--                <section class="container mx-auto px-2 py-6 max-w-4xl">-->
-
-<!--                    <div x-data="{ platforms: [-->
-<!--        { name: 'Interactive Brokers', icon: 'briefcase', src: 'assets/ibkr_logotype2.png', h: '20'},-->
-<!--        { name: 'BTIG', icon: 'building', src: 'assets/btig_logotype2.png', h: '20' },-->
-<!--        { name: 'Coinbase', icon: 'banknote', src: 'assets/coinbase_logotype2.png', h: '16' },-->
-<!--        { name: 'Eze EMS', icon: 'network', src: 'assets/eze_ems_logotype2.png', h: '40' },-->
-<!--        { name: 'FTX', icon: 'scale', src: 'assets/ftx_logotype2.png', h: '30' },-->
-<!--    ] }"-->
-<!--                         class="flex flex-wrap justify-center gap-2 sm:gap-2">-->
-
-<!--                        <template x-for="platform in platforms"-->
-<!--                                  :key="platform.name">-->
-<!--                            <div class="bg-gray-900 px-4 py-2 rounded-md shadow-md flex items-center justify-center-->
-<!--                        w-[180px] h-[60px] sm:h-[50px] transition sm:hover:scale-105">-->
-
-<!--                                &lt;!&ndash; Image &ndash;&gt;-->
-<!--                                <img :src="platform.src"-->
-<!--                                     :alt="platform.name"-->
-<!--                                     class="max-h-full max-w-full object-contain"-->
-<!--                                     :class="'h-[' + platform.h + 'px]'">-->
-<!--                            </div>-->
-<!--                        </template>-->
-
-<!--                    </div>-->
-<!--                </section>-->
-
-
-<!--            </div>-->
         </div>
 
     </header>
@@ -218,15 +251,17 @@
 
 
         <!-- Call to Action -->
-        <section class="w-full bg-gray-800 shadow-md pb-16">
+        <section class="w-full bg-secondary shadow-md pb-16">
             <div class="max-w-3xl  mx-auto px-6 py-12 sm:py-20 text-center">
-                <h2 class="text-4xl font-bold mb-12 sm:mb-20 text-center">Contact</h2>
+                <h2 class="text-4xl font-bold mb-12 sm:mb-20 text-center  gradient-text heading-text">Contact</h2>
                 <span> Get in touch: </span>
                 <div class="text-center">
                     <a href="mailto:hello@voyzan.com"
-                       class="mt-4 inline-block bg-blue-500 px-6 py-3 rounded-lg text-white font-semibold hover:bg-blue-600 shadow-md">
+                       class="mt-4 inline-block primary-button px-6 py-4 rounded-lg shadow-md transition">
+                        <i data-lucide="message-square" class="size-4 mr-0 mb-1 inline-flex"></i>
                         hello@voyzan.com
                     </a>
+<!--                    <img src="assets/line/underline01.png" class=" h-auto w-64 mx-auto opacity-75" style="transform: translate(10px, -12px);"/>-->
                 </div>
             </div>
         </section>
@@ -234,9 +269,12 @@
         <div id="faq"></div>
 
         <!-- Contact -->
-        <footer class="text-center py-8 mt-24 bg-gray-800">
+        <footer class="text-center py-8 mt-24 bg-secondary">
             <p> Voy Zan <br><a href="mailto:hello@voyzan.com"
-                               class="text-blue-400">hello@voyzan.com</a></p>
+                               class="text-accent">
+                <i data-lucide="message-square" class="size-4 mr-0 mb-1 inline-flex"></i>
+                hello@voyzan.com
+            </a></p>
         </footer>
     </div>
 

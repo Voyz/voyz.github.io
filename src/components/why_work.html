@@ -1,6 +1,6 @@
 <!-- Why Work With Me Section -->
 <section class="container mx-auto px-6 py-12 sm:py-20 max-w-3xl">
-    <h2 class="text-4xl font-bold mb-12 sm:mb-20 text-center">Why Work With Me?</h2>
+    <h2 class="text-4xl font-bold mb-12 sm:mb-20 text-center gradient-text heading-text">Why Work With Me?</h2>
 
     <div x-data="{ features: [
         { icon: 'phone-call', title: 'Free First Call', text: 'I\'ll help you assess whether I’m the right fit, no charge.' },
@@ -16,15 +16,48 @@
                     w-full  sm:size-[220px]"> <!-- Ensures grid-like structure -->
 
                 <!-- Icon -->
-                <i :data-lucide="feature.icon" class="w-8 h-8 text-teal-400 sm:mb-3 min-w-6"></i>
+                <i :data-lucide="feature.icon" class="w-8 h-8 text-accent sm:mb-3 min-w-6"></i>
 
                 <!-- Text -->
                 <div>
                     <h3 class="text-lg font-semibold" x-text="feature.title"></h3>
-                    <p class="text-sm text-gray-300" x-text="feature.text"></p>
+                    <p class="text-sm text-secondary" x-text="feature.text"></p>
                 </div>
             </div>
         </template>
+
+    </div>
+
+    <div class="mt-20 max-w-2xl ml-auto text-center text-secondary">
+        <p>Brokers and platforms I've used:</p>
+
+        <section class="container mx-auto px-2 py-6 max-w-4xl">
+
+            <div x-data="{ platforms: [
+        { name: 'Interactive Brokers', icon: 'briefcase', src: 'assets/ibkr_logotype2.png', h: '20'},
+        { name: 'BTIG', icon: 'building', src: 'assets/btig_logotype2.png', h: '20' },
+        { name: 'Coinbase', icon: 'banknote', src: 'assets/coinbase_logotype2.png', h: '16' },
+        { name: 'Eze EMS', icon: 'network', src: 'assets/eze_ems_logotype2.png', h: '40' },
+        { name: 'FTX', icon: 'scale', src: 'assets/ftx_logotype2.png', h: '30' },
+    ] }"
+                 class="flex flex-wrap justify-center gap-2 sm:gap-2">
+
+                <template x-for="platform in platforms"
+                          :key="platform.name">
+                    <div class="bg-secondary px-4 py-2 rounded-md shadow-md flex items-center justify-center
+                        w-[180px] h-[60px] sm:h-[50px] transition sm:hover:scale-105">
+
+                        <!-- Image -->
+                        <img :src="platform.src"
+                             :alt="platform.name"
+                             class="max-h-full max-w-full object-contain opacity-80"
+                             :class="'h-[' + platform.h + 'px]'">
+                    </div>
+                </template>
+
+            </div>
+        </section>
+
 
     </div>
 </section>

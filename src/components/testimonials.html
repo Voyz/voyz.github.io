@@ -1,6 +1,6 @@
 <!-- Testimonials Carousel -->
 <section class="container mx-auto px-6 py-12 sm:py-20 max-w-3xl mb-20">
-    <h2 class="text-4xl font-bold mb-12 sm:mb-20 text-center">Testimonials</h2>
+    <h2 class="text-4xl font-bold mb-12 sm:mb-20 text-center gradient-text heading-text">Testimonials</h2>
 
     <div x-data="{
         activeIndex: 0,
@@ -9,6 +9,11 @@
             name: 'Thomas Storfjord, individual trader',
             context: 'short-term algo trading project',
             text: '&quot;I worked with Voy on a short but important project where he built a reliable FastAPI proxy server to connect my desktop trading application with the IBKR Web API. <br><br> Despite the tight timeline, Voy delivered <b>a high-quality solution that exceeded my expectations.</b><br><br> He identified areas needing more attention and introduced a Redis-backed data storage layer, likely invaluable for the system’s stability.&quot;'
+          },
+          {
+            name: 'Daniel Naim, Fennel Markets',
+            context: 'consultation',
+            text: '&quot;Voy provided highly valuable consultations during a critical stage as we laid the foundation for Fennel’s trading API.<br><br>He gave us a <b>clear and actionable view of how algorithmic trading systems are structured</b>, breaking down system components, workflows, and common pitfalls in a straightforward, applicable way.<br><br>Voy’s technical expertise and clear communication directly influenced several of our key decisions as we moved closer to our MVP.&quot;'
           },
           {
             name: 'Grant Stenger, Kinetic.xyz',
@@ -46,7 +51,7 @@
       }">
 
         <!-- Testimonial Container -->
-        <div class="min-h-[370px]  flex flex-col justify-between outline outline-2 outline-gray-800 bg-gray-900 py-4 rounded-md text-gray-200 flex flex-col justify-between"> <!-- Ensures text centers properly -->
+        <div class="min-h-[370px]  flex flex-col justify-between outline outline-2 border-primary py-4 rounded-md text-gray-200 flex flex-col justify-between"> <!-- Ensures text centers properly -->
             <div class="relative min-h-[370px]">
                 <template x-for="(testimonial, index) in testimonials"
                           :key="index">
@@ -61,16 +66,16 @@
 
                         <!-- Centered testimonial text -->
                         <div class="flex-grow flex items-center justify-center mb-2 mt-4">
-                            <p class="max-w-xl mx-auto italic left"
-                               x-html="testimonial.text.replace(/<b>(.*?)<\/b>/g, '<span class=\'text-teal-400 font-bold\'>$1</span>')"></p>
+                            <p class="max-w-xl mx-auto italic left text-secondary"
+                               x-html="testimonial.text.replace(/<b>(.*?)<\/b>/g, '<span class=\'text-accent font-bold\'>$1</span>')"></p>
                         </div>
 
                         <!-- Name always stays at the top -->
-                        <p class="text-lg font-semibold text-right">
-                            <span class="inline-block" x-text="testimonial.name"></span>
+                        <p class=" text-right">
+                            <span class="inline-block" x-html="testimonial.name"></span>
                         </p>
                         <p class="text-right mb-2">
-                            <span class="inline-block" x-text="testimonial.context"></span>
+                            <span class="inline-block" x-html="testimonial.context"></span>
                         </p>
 
                     </div>
@@ -84,8 +89,8 @@
             <!-- Navigation Buttons -->
             <div class="flex justify-between w-full max-w-3xl">
                 <button @click="prev()"
-                        class="size-10 inline-flex outline outline-2 outline-gray-800 rounded-lg
-               hover:bg-gray-800 transition mr-auto shadow-md items-center justify-center">
+                        class="size-10 inline-flex outline outline-2 secondary-button rounded-lg
+               hover:bg-secondary transition mr-auto shadow-md items-center justify-center">
                     <i data-lucide="chevron-left" class="size-4 text-gray-400 flex-shrink-0"></i>
                 </button>
 
@@ -94,15 +99,15 @@
                     <template x-for="(testimonial, index) in testimonials"
                               :key="index">
                         <div class="w-2 h-2 rounded-full cursor-pointer transition"
-                             :class="activeIndex === index ? 'bg-teal-400' : 'bg-gray-800'"
+                             :class="activeIndex === index ? 'bg-accent' : 'bg-secondary'"
                              @click="activeIndex = index">
                         </div>
                     </template>
                 </div>
 
                 <button @click="next()"
-                        class="size-10 inline-flex outline outline-2 outline-gray-800 rounded-lg
-               hover:bg-gray-800 transition ml-auto shadow-md items-center justify-center">
+                        class="size-10 inline-flex outline outline-2 secondary-button rounded-lg
+               transition ml-auto shadow-md items-center justify-center">
                     <i data-lucide="chevron-right" class="size-4 text-gray-400 flex-shrink-0"></i>
                 </button>
 
@@ -112,14 +117,14 @@
     </div>
     <div class="flex items-center mt-20">
         <a href="https://www.linkedin.com/in/voy-zankowski-24417885/details/recommendations/"
-           class="flex items-center gap-2 text-white font-semibold mx-auto">
+           class="flex items-center gap-2 text-secondary font-semibold mx-auto">
 
             See more testimonials on LinkedIn
 
             <!-- Small Icon Button -->
-            <div class="size-6 inline-flex items-center justify-center bg-blue-600 xvisited:bg-blue-200 p-1
-                    rounded-md hover:bg-blue-700 shadow-md transition">
-                <i data-lucide="external-link" class="size-4 text-white"></i>
+            <div class="size-6 inline-flex items-center justify-center primary-button p-1
+                    rounded-md shadow-md transition">
+                <i data-lucide="external-link" class="size-4"></i>
             </div>
         </a>
     </div>

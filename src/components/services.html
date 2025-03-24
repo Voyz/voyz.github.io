@@ -36,7 +36,11 @@
 <!--</section>-->
 
 <section class="container mx-auto px-0 sm:px-6 py-12 sm:py-20 max-w-3xl">
-    <h2 class="text-4xl font-bold mb-12 sm:mb-20 text-center">Services</h2>
+    <div class="relative text-center mb-12 sm:mb-20 flex flex-col items-center">
+        <h2 class="relative text-4xl font-bold text-center gradient-text heading-text w-full mx-auto">Services</h2>
+<!--        <img src="assets/line/underline01.png" class=" h-auto w-64 mx-auto opacity-75" style="transform: translate(10px, -12px);"/>-->
+<!--        <img src="assets/line/box02.png" class=" h-auto w-[20rem] mx-auto opacity-70 absolute" style="transform: translate(-7px, -113.3px);"/>-->
+    </div>
     <div x-data="{ services: [
         {
             icon: 'binary',
@@ -118,8 +122,8 @@
                      class="xbg-gray-800 p-4 sm:xrounded-lg cursor-pointer sm:xshadow-md transition-all duration-300"
                      :class="{ 'mb-16': open }"
                 >
-                    <div class="xborder-l xborder-grey-800 ">
-                        <div class="ml-0 sm:ml-6 sm:my-4 sm:mr-4 flex justify-between items-center">
+                    <div class="xborder-t xborder-grey-800 ">
+                        <div class="ml-2 sm:ml-6 sm:my-4 sm:mr-4 flex justify-between items-center">
         <!--                    <img :src="service.image_small" class="h-20">-->
         <!--                    <div class="flex justify-center items-center size-12 sm:size-20 rounded-2xl-->
         <!--                            bg-gray-700 shadow-lg transition hover:scale-105 flex-shrink-0">-->
@@ -129,7 +133,7 @@
                             <div class="flex-grow-1 w-full">
                                 <div class="flex items-center mb-2 ">
                                     <i :data-lucide="service.icon"
-                                       class="size-5 text-teal-400 mr-2"></i>
+                                       class="size-5 text-accent mr-2"></i>
 
                                     <h3 class="font-semibold text-lg"
                                         x-text="service.title"></h3>
@@ -139,19 +143,20 @@
                             </div>
 
                             <!-- Caret Icon with Rotation -->
-                            <i data-lucide="chevron-down"
-                               class="w-6 h-6 text-gray-400 transition-transform duration-300 ml-4 flex-shrink-0"
-                               :class="{ 'rotate-180': open }"></i>
+<!--                            <i data-lucide="chevron-down" class="w-6 h-6 text-gray-400 transition-transform duration-300 ml-4 flex-shrink-0" :class="{ 'rotate-180': open }"></i>-->
+                            <div class="size-10 inline-flex items-center justify-center outline outline-2  secondary-button p-1 rounded-md shadow-md ">
+                                <i data-lucide="chevron-down" class="size-4 transition-transform duration-300" :class="{ 'rotate-180': open }"></i>
+                            </div>
                         </div>
 
                         <!-- Answer Container -->
                         <div x-ref="answer"
                              x-bind:style="open ? 'max-height: ' + $refs.answer.scrollHeight + 'px; opacity: 1;' : 'max-height: 0px; opacity: 0;'"
-                             class="overflow-hidden transition-all duration-300 ease-in-out opacity-0"
+                             class="overflow-hidden transition-all duration-300 ease-in-out opacity-0 text-secondary"
                         >
 
-                            <div class="px-0 sm:px-12 mb-8">
-                                <img :src="service.image_large" class="mx-auto max-h-[240px]  px-0 sm:px-4 mt-8 mb-4">
+                            <div class="px-0 pl-2 sm:px-12 mb-8">
+                                <img :src="service.image_large" class="mx-auto max-h-[240px] opacity-85 px-0 sm:px-4 mt-8 mb-4">
                                 <ul class="list-disc mt-8 mb-2 space-y-4 pl-4">
                                     <template x-for="(bulletpoint) in service.bulletpoints"
                                               :key="bulletpoint">
