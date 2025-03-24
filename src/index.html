@@ -15,13 +15,7 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body {
-            /*font-family: 'Nunito', sans-serif;*/
-            /*font-family: 'Arial', sans-serif;*/
-            /*font-family: 'Times New Roman', serif;*/
-            /*font-family: 'Public Sans', sans-serif;*/
-            font-family: 'Inter', sans-serif;
-        }
+
         :root {
             --color-primary-bg: #191919;
             --color-secondary-bg: #242424;
@@ -32,6 +26,16 @@
             --color-button: #ffffff;
             --color-text-primary: #cccccc;
             --color-text-secondary: #bbbbbb;
+            --darkreader-background-fffffff2: #fffffff2;
+            --darkreader-background-ffffff66: #ffffff66;
+        }
+        body {
+            /*font-family: 'Nunito', sans-serif;*/
+            /*font-family: 'Arial', sans-serif;*/
+            /*font-family: 'Times New Roman', serif;*/
+            /*font-family: 'Public Sans', sans-serif;*/
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-primary-bg);
         }
         .heading-text{
             font-family: 'Roboto Condensed', serif;
@@ -82,12 +86,23 @@
             border-color: var(--color-primary-border);
             outline-color: var(--color-primary-border);
         }
+
         .gradient-text {
             background: linear-gradient(97.0286deg, rgba(255,255,255,0.95), rgba(255,255,255,0.4));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        /*body { font-family: 'IBM+Plex+Sans', sans-serif; }*/
+        /*@media (prefers-color-scheme: dark) {*/
+        /*    .gradient-text {*/
+        /*        color:white;*/
+        /*        background: none;*/
+        /*        -webkit-background-clip: border-box;*/
+        /*        -webkit-text-fill-color: white;*/
+        /*    }*/
+        /*}*/
+        h1 {
+            isolation: isolate;
+        }
     </style>
 
     <!-- Alpine.js (Minimal JavaScript) -->
@@ -96,6 +111,7 @@
 
     <!--    <script src="https://unpkg.com/lucide@latest"></script>-->
     <script src="assets/lucide/lucide.js"></script>
+
     <style>
         /*body {*/
         /*    background: linear-gradient(60deg, hsl(221 48% 7% / 1), hsl(218 34% 12% / 1));*/
@@ -158,7 +174,10 @@
 
         /*}*/
     </style>
-
+    <meta name="theme-color" content="rgba(0,0,0,0)">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
 </head>
 <body class="min-h-[3300px] text-primary">
 <div class="body-overlay bg-primary">
